@@ -1,0 +1,286 @@
+images {
+	image, "on_off.png" COMP;
+	image, "border.png" COMP;
+}
+
+collections {
+	group {
+		name, "eshutdown";
+		min, 600 300;
+		max, 600 300;
+		parts {
+			part {
+				name, "eshutdown/background";
+				type, RECT;
+				description {
+					state, "default" 0.0;
+					color, 255 255 255 255;
+					rel1 { relative, 0.0 0.0; offset, 0 0; }
+					rel2 { relative, 1.0 1.0; offset, 0 0; }
+				}
+			}
+			part {
+				name, "eshutdown/image";
+				type, IMAGE;
+				mouse_events, 0;
+				description {
+					state, "default" 0.0;
+					rel1 { relative, 0.0 0.0; offset, 0 0; }
+					rel2 { relative, 0.5 1.0; offset, 0 0; }
+					image {
+						normal, "on_off.png";
+					}
+					fill {
+						size {
+							relative, 1.0 1.0;
+							offset, 0 0;
+						}
+					}
+				}
+			}
+			part {
+				name, "eshutdown/text";
+				type, RECT;
+				mouse_events, 0;
+				description {
+					state, "default" 0.0;
+					rel1 { relative, 0.5 0.0; offset, 10 0; }
+					rel2 { relative, 1.0 1.0; offset, 0 0; }
+				}
+			}
+			part {
+				name, "eshutdown/text/vsplit";
+				type, RECT;
+				mouse_events, 0;
+				description {
+					state, "default" 0.0;
+					color, 0 0 0 255;
+					rel1 { relative, 0.66 0.0; offset, 0 10; to, "eshutdown/text"; }
+					rel2 { relative, 0.66 1.0; offset, 0 -10; to, "eshutdown/text"; }
+				}
+			}
+			part {
+				name, "eshutdown/text/hsplit";
+				type, RECT;
+				mouse_events, 0;
+				description {
+					state, "default" 0.0;
+					color, 0 0 0 255;
+					rel1 { relative, 0.0 0.5; offset, 10 0; to, "eshutdown/text"; }
+					rel2 { relative, 1.0 0.5; offset, -10 0; to, "eshutdown/text"; }
+				}
+			}
+
+			part {
+				name, "eshutdown/text/ok";
+				type, RECT;
+				mouse_events, 0;
+				description {
+					state, "default" 0.0;
+					rel1 { relative, 0.0 0.0; offset, 5 5; to, "eshutdown/text"; }
+					rel2 { relative, 0.0 0.5; offset, -5 -5; to, "eshutdown/text/vsplit"; }
+				}
+			}
+
+			part {
+				name, "eshutdown/text/ok/label1";
+				type, TEXT;
+				mouse_events, 0;
+				description {
+					state, "default" 0.0;
+					color, 0 0 0 255;
+					rel1 { relative, 0.0 0.25; offset, 0 0; to, "eshutdown/text/ok"; }
+					rel2 { relative, 1.0 0.5; offset, 0 0; to, "eshutdown/text/ok"; }
+					text {
+						text, "Выключить";
+						font, "sans:style=Bold";
+						size, 24;
+						text_class, "crome";
+					}
+				}
+				description {
+					state, "hidden" 0.0;
+					inherit, "default" 0.0;
+					color, 255 255 255 0;
+					rel1 { relative, 0.0 0.0; offset, 0 0; to, "eshutdown/text/ok"; }
+					rel2 { relative, 0.0 0.0; offset, 0 0; to, "eshutdown/text/ok"; }
+				}
+			}
+			part {
+				name, "eshutdown/text/ok/label2";
+				type, TEXT;
+				mouse_events, 0;
+				description {
+					state, "default" 0.0;
+					color, 0 0 0 255;
+					rel1 { relative, 0.0 0.5; offset, 0 0; to, "eshutdown/text/ok"; }
+					rel2 { relative, 1.0 0.75; offset, 0 0; to, "eshutdown/text/ok"; }
+					text {
+						text, "OFF";
+						font, "sans:style=Bold";
+						size, 24;
+						text_class, "crome";
+					}
+				}
+				description {
+					state, "alt" 0.0;
+					inherit, "default" 0.0;
+					rel1 { relative, 0.0 0.0; offset, 0 0; to, "eshutdown/text/ok"; }
+					rel2 { relative, 1.0 1.0; offset, 0 0; to, "eshutdown/text/ok"; }
+				}
+			}
+			part {
+				name, "eshutdown/text/ok/label3";
+				type, TEXT;
+				mouse_events, 0;
+				description {
+					state, "default" 0.0;
+					color, 85 85 85 255;
+					rel1 { relative, 0.0 0.0; offset, 0 0; to, "eshutdown/text/vsplit"; }
+					rel2 { relative, 1.0 0.5; offset, 0 0; to, "eshutdown/text"; }
+					text {
+						text, "\"OK\"";
+						font, "sans:style=Bold";
+						size, 30;
+						text_class, "crome";
+					}
+				}
+			}
+
+			part {
+				name, "eshutdown/text/cancel";
+				type, RECT;
+				mouse_events, 0;
+				description {
+					state, "default" 0.0;
+					rel1 { relative, 0.0 0.5; offset, 5 5; to, "eshutdown/text"; }
+					rel2 { relative, 0.0 1.0; offset, -5 -5; to, "eshutdown/text/vsplit"; }
+				}
+			}
+
+			part {
+				name, "eshutdown/text/cancel/label1";
+				type, TEXT;
+				mouse_events, 0;
+				description {
+					state, "default" 0.0;
+					color, 0 0 0 255;
+					rel1 { relative, 0.0 0.25; offset, 0 0; to, "eshutdown/text/cancel"; }
+					rel2 { relative, 1.0 0.5; offset, 0 0; to, "eshutdown/text/cancel"; }
+					text {
+						text, "Отменить";
+						font, "sans:style=Bold";
+						size, 24;
+						text_class, "crome";
+					}
+				}
+				description {
+					state, "hidden" 0.0;
+					inherit, "default" 0.0;
+					color, 255 255 255 0;
+					rel1 { relative, 0.0 0.0; offset, 0 0; to, "eshutdown/text/cancel"; }
+					rel2 { relative, 0.0 0.0; offset, 0 0; to, "eshutdown/text/cancel"; }
+				}
+			}
+			part {
+				name, "eshutdown/text/cancel/label2";
+				type, TEXT;
+				mouse_events, 0;
+				description {
+					state, "default" 0.0;
+					color, 0 0 0 255;
+					rel1 { relative, 0.0 0.5; offset, 0 0; to, "eshutdown/text/cancel"; }
+					rel2 { relative, 1.0 0.75; offset, 0 0; to, "eshutdown/text/cancel"; }
+					text {
+						text, "Cancel";
+						font, "sans:style=Bold";
+						size, 24;
+						text_class, "crome";
+					}
+				}
+				description {
+					state, "alt" 0.0;
+					inherit, "default" 0.0;
+					rel1 { relative, 0.0 0.0; offset, 0 0; to, "eshutdown/text/cancel"; }
+					rel2 { relative, 1.0 1.0; offset, 0 0; to, "eshutdown/text/cancel"; }
+				}
+			}
+			part {
+				name, "eshutdown/text/cancel/label3";
+				type, TEXT;
+				mouse_events, 0;
+				description {
+					state, "default" 0.0;
+					color, 85 85 85 255;
+					rel1 { relative, 0.0 0.5; offset, 0 0; to, "eshutdown/text/vsplit"; }
+					rel2 { relative, 1.0 1.0; offset, 0 0; to, "eshutdown/text"; }
+					text {
+						text, "\"C\"";
+						font, "sans:style=Bold";
+						size, 30;
+						text_class, "crome";
+					}
+				}
+			}
+			part {
+				name, "eshutdown/border";
+				type, IMAGE;
+				description {
+					state, "default" 0.0;
+					rel1 { relative, 0.0 0.0; offset, 0 0; }
+					rel2 { relative, 1.0 1.0; offset, -1 -1; }
+					image {
+						normal, "border.png";
+						border, 9 9 9 9;
+						middle, 0;
+					}
+					fill {
+						smooth, 0;
+					}
+				}
+			}
+		}
+
+		programs {
+			program {
+				name, "set_noloc";
+				signal, "set_noloc";
+				script {
+					set_state(PART:"eshutdown/text/ok/label1", "hidden", 0.0);
+					set_state(PART:"eshutdown/text/ok/label2", "alt", 0.0);
+					set_state(PART:"eshutdown/text/cancel/label1", "hidden", 0.0);
+					set_state(PART:"eshutdown/text/cancel/label2", "alt", 0.0);
+				}
+			}
+			program {
+				name, "set_loc";
+				signal, "set_loc";
+				script {
+					set_state(PART:"eshutdown/text/ok/label1", "default", 0.0);
+					set_state(PART:"eshutdown/text/ok/label2", "default", 0.0);
+					set_state(PART:"eshutdown/text/cancel/label1", "default", 0.0);
+					set_state(PART:"eshutdown/text/cancel/label2", "default", 0.0);
+				}
+			}
+		}
+	}
+
+	group {
+		name, "main_window";
+		min, 600 300;
+		max, 600 300;
+		parts {
+			part {
+				name, "background";
+				type, RECT;
+				description {
+					state, "default" 0.0;
+					color, 255 255 255 255;
+					rel1 { relative, 0.0 0.0; offset, 0 0; }
+					rel2 { relative, 1.0 1.0; offset, -1 -1; }
+				}
+			}
+		}
+	}
+}
+
