@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <unistd.h>
+#include <linux/reboot.h>
 #include <libintl.h>
 
 #include <Ecore.h>
@@ -24,6 +26,8 @@ typedef struct
 static void shutdown()
 {
 	printf("shutdown\n");
+	sync();
+	system("poweroff");
 }
 
 static void
@@ -129,7 +133,7 @@ int main(int argc, char **argv)
 		edje_object_part_text_set(edje, "eshutdown/text/cancel/label1", t2);
 	}
 
-	ecore_evas_show(main_win);
+//	ecore_evas_show(main_win);
 	ecore_main_loop_begin();
 
 	edje_shutdown();
