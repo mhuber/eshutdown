@@ -1,0 +1,14 @@
+Source: eshutdown
+Section: gui
+Maintainer: Alexander Kerner <lunohod@openinkpot.org>
+Build-Depends: debhelper (>> 2.0.0), autoconf, automake, libtool, pkg-config, libecore-dev, libedje-dev, libevas-dev
+XCS-Cross-Host-Build-Depends: debhelper (>> 2.0.0), autoconf, automake, libtool, pkg-config
+XCS-Cross-Build-Depends: libecore-dev, libevas-dev, libedje-dev
+Priority: optional
+Standards-Version: 3.6.2
+
+Package: eshutdown
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: Shutdown gui
+ Shutdown gui
