@@ -1,1 +1,1 @@
-SUBDIRS = src themes
+SUBDIRS = src themes po
