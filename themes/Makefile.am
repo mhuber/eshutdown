@@ -5,7 +5,7 @@ EDJ = $(EDC:%.edc=%.edj)
 
 EXTRA_DIST = $(EDC)
 
-CLEANFILES = $(EDJ)
+#CLEANFILES = $(EDJ)
 
 themedir =  $(pkgdatadir)/themes
 theme_DATA = $(EDJ)
